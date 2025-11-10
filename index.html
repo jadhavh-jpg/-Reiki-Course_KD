@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kasturi Divine — Reiki Course</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg-start:#E8F7F5; /* soft mint */
+      --bg-end:#FDF7EC; /* warm cream */
+      --card:#FFFFFF;
+      --accent1:#0E8B82; /* calming teal */
+      --accent2:#F2A900; /* warm golden accent */
+      --muted:#4B5563;
+    }
+
+    *{box-sizing:border-box;font-family:'Poppins',system-ui,Arial;color:#0f1724}
+    body{margin:0;background:linear-gradient(180deg,var(--bg-start),var(--bg-end));-webkit-font-smoothing:antialiased}
+    .container{max-width:1150px;margin:24px auto;padding:20px}
+
+    .hero{background:linear-gradient(180deg, rgba(14,139,130,0.06), rgba(242,169,0,0.02));border-radius:16px;padding:22px;display:flex;gap:26px;align-items:flex-start;box-shadow:0 14px 40px rgba(10,20,30,0.06)}
+    .left{flex:1}
+    .badge{display:inline-block;background:linear-gradient(90deg, rgba(14,139,130,0.12), rgba(242,169,0,0.06));color:var(--accent1);padding:8px 14px;border-radius:999px;font-weight:700;margin-bottom:10px;font-size:13px}
+    h1{font-size:clamp(20px,3vw,34px);margin:6px 0 8px 0;color:#063938;line-height:1.2}
+    h2{font-size:clamp(14px,1.6vw,16px);margin:0 0 12px 0;color:var(--muted)}
+
+    .card{background:var(--card);border-radius:12px;padding:14px;margin-top:12px;box-shadow:0 8px 28px rgba(10,18,30,0.04)}
+    .price{display:flex;align-items:baseline;gap:12px;margin:12px 0}
+    .price .now{font-size:22px;color:var(--accent1);font-weight:800}
+    .price .old{font-size:13px;color:var(--muted);text-decoration:line-through}
+
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+    .btn{padding:12px 18px;border-radius:12px;border:0;font-weight:700;cursor:pointer;min-width:170px;text-decoration:none;display:inline-flex;align-items:center;justify-content:center}
+    .btn-whatsapp{background:linear-gradient(90deg,#16c986,#0f8b73);color:white}
+    .btn-pay{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:white}
+
+    .course-list{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:6px 0}
+    .course-group{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+    .course-item{flex:1 1 calc(20% - 10px);min-width:180px;background:linear-gradient(180deg, rgba(14,139,130,0.05), rgba(242,169,0,0.03));padding:10px 12px;border-radius:10px;font-weight:600;text-align:center;color:#063938}
+
+    .you-get{background:linear-gradient(180deg, rgba(14,139,130,0.04), rgba(242,169,0,0.02));padding:12px;border-radius:10px;font-weight:800;text-align:center;color:#072f2b}
+
+    .videos{display:flex;flex-direction:column;gap:8px}
+    .video-link{display:flex;align-items:center;gap:10px;padding:10px;border-radius:10px;background:linear-gradient(90deg, rgba(14,139,130,0.02), rgba(242,169,0,0.02));text-decoration:none;color:#072f2b;font-weight:700}
+    .video-link span{font-size:13px;color:var(--muted);font-weight:600}
+
+    .mentor-img{width:180px;height:180px;border-radius:12px;object-fit:cover;border:6px solid rgba(255,255,255,0.85);box-shadow:0 20px 45px rgba(20,30,40,0.12)}
+    .mentor-box{display:flex;justify-content:center;align-items:center;gap:20px;flex-wrap:wrap;margin-top:20px}
+
+    .footer{margin-top:18px;text-align:center;color:var(--muted);font-size:13px}
+    .footer-cta{display:flex;gap:10px;justify-content:center;margin-top:10px}
+
+    @media(max-width:980px){
+      .hero{flex-direction:column;align-items:center;text-align:center}
+      .course-item{flex:1 1 calc(45% - 10px)}
+      .mentor-img{width:150px;height:150px}
+      .footer-cta{flex-direction:column}
+      .btn{min-width:unset;width:100%}
+    }
+
+    @media(max-width:480px){
+      .course-item{flex:1 1 100%}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="hero">
+      <div class="left">
+        <div class="badge">Kasturi Divine • 90-Day Reiki Certification</div>
+        <h1>Certified Reiki Healer Banein — Shuru Kijiye Apna Healing Safar Aaj Se</h1>
+        <h2>Live Zoom classes • Weekly practice • Lifetime WhatsApp support • Certificate</h2>
+
+        <div class="card">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
+            <div>
+              <div style="font-weight:800">Course Starts: 17 November</div>
+              <div style="color:var(--muted);font-size:13px;margin-top:6px">90 दिन • Weekend & Evening batches • EMI available</div>
+            </div>
+            <div class="price">
+              <div class="now">₹9,999</div>
+              <div class="old">₹19,999</div>
+            </div>
+          </div>
+
+          <div style="margin-top:12px" class="cta-row">
+            <a class="btn btn-whatsapp" href="https://wa.me/XXXXXXXXXXXX" target="_blank">Join WhatsApp Group</a>
+            <a class="btn btn-pay" href="https://example.com/pay?upi=your-upi@bank" target="_blank">Pay & Enroll Now</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 style="margin:0 0 8px 0;text-align:center">Course Content — Kasturi Divine</h3>
+          <div style="color:var(--muted);margin-bottom:8px;text-align:center;font-size:14px">(Complete syllabus — practical techniques, energy work, and spiritual tools)</div>
+
+          <div class="course-group">
+            <div class="course-item">Self-Healing</div>
+            <div class="course-item">Distance Healing</div>
+            <div class="course-item">Psychic Surgery</div>
+            <div class="course-item">7 Chakras Healing</div>
+            <div class="course-item">Aura Cleansing</div>
+            <div class="course-item">Aura Protection</div>
+            <div class="course-item">Home & Self Protection</div>
+            <div class="course-item">Water Charging</div>
+            <div class="course-item">Food Charging</div>
+            <div class="course-item">Cord Cutting</div>
+            <div class="course-item">Angels Guide</div>
+            <div class="course-item">21 Days Gratitude</div>
+            <div class="course-item">Meditations</div>
+            <div class="course-item">Money Reiki</div>
+            <div class="course-item">Affirmations</div>
+            <div class="course-item">Visualization</div>
+            <div class="course-item">Ho’oponopono</div>
+            <div class="course-item">Reiki Box</div>
+          </div>
+
+          <h4 style="margin-top:16px;text-align:center">Hypno-Heal Techniques (Heal With Reiki):</h4>
+          <div class="course-group">
+            <div class="course-item">Money & Wealth</div>
+            <div class="course-item">Health</div>
+            <div class="course-item">Relationship</div>
+            <div class="course-item">Career</div>
+            <div class="course-item">Spiritual Path</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 style="margin:0 0 8px 0;text-align:center">YouTube Resources (Suggested)</h3>
+          <div style="color:var(--muted);margin-bottom:8px;text-align:center">Watch short videos to understand Reiki basics — replace these with your own video links.</div>
+          <div class="videos">
+            <a class="video-link" href="https://www.youtube.com/watch?v=VIDEO_ID_1" target="_blank">▶️ Intro to Reiki • <span>10 min</span></a>
+            <a class="video-link" href="https://www.youtube.com/watch?v=VIDEO_ID_2" target="_blank">▶️ Chakra Healing Demo • <span>12 min</span></a>
+            <a class="video-link" href="https://www.youtube.com/watch?v=VIDEO_ID_3" target="_blank">▶️ Distance Healing Technique • <span>8 min</span></a>
+            <a class="video-link" href="https://www.youtube.com/watch?v=VIDEO_ID_4" target="_blank">▶️ Money Reiki Practice • <span>9 min</span></a>
+          </div>
+        </div>
+
+        <div class="mentor-box">
+          <div style="text-align:center">
+            <img alt="Mentor" class="mentor-img" src="/mnt/data/WhatsApp Image 2025-11-10 at 3.51.50 PM.jpeg">
+            <div style="margin-top:10px;font-weight:800">Dr. Santoshh Jakhar</div>
+            <div style="font-size:13px;color:var(--muted);margin-top:4px">Reiki Grand Master</div>
+          </div>
+          <div style="text-align:center">
+            <img alt="Mentor" class="mentor-img" src="/mnt/data/WhatsApp Image 2025-11-10 at 1.05.58 PM.jpeg">
+            <div style="margin-top:10px;font-weight:800">Mrs. Neitu Choudhary</div>
+            <div style="font-size:13px;color:var(--muted);margin-top:4px">Reiki Master Teacher</div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:14px;text-align:center">
+          <div class="you-get">YOU'LL GET:<br>Live classes on Zoom, recordings, PDFs, weekly practice, full-time WhatsApp support, certificate, Q&A sessions</div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer">
+      <div style="font-weight:800">Kasturi Divine • For more info call/WhatsApp: +91 XXXXXXXXXX • © Kasturi Divine</div>
+      <div class="footer-cta">
+        <a class="btn btn-whatsapp" href="https://wa.me/XXXXXXXXXXXX" target="_blank">Join WhatsApp Group</a>
+        <a class="btn btn-pay" href="https://example.com/pay?upi=your-upi@bank" target="_blank">Pay & Enroll Now</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
