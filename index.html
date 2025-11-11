@@ -1,207 +1,178 @@
 <!doctype html>
-<html lang="hi">
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Kasturi Divine — Reiki Course</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#071427; /* deep navy */
-      --panel:#0c2030; /* dark panel */
-      --muted:#9fb3bf;
-      --accent1:#6EE7D0; /* aqua */
-      --accent2:#B388FF; /* soft purple */
-      --gold:#FFB86B;
-      --glass:rgba(255,255,255,0.04);
+      --brand:#6b3f1f; /* brown */
+      --accent:#f5b040;
+      --muted:#f7f3ef;
+      --cta:#ff6b35;
+      --maxw:1100px;
+      font-family: "Segoe UI", Roboto, Arial, sans-serif;
     }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,var(--muted),#fff);color:#222}
+    .wrap{max-width:var(--maxw);margin:24px auto;padding:18px}
 
-    *{box-sizing:border-box;font-family:'Poppins',system-ui,Arial;color:var(--muted)}
-    body{margin:0;background:linear-gradient(180deg,var(--bg),#02121a);-webkit-font-smoothing:antialiased}
-    .container{max-width:1150px;margin:28px auto;padding:22px}
+    /* Header / Hero */
+    header{display:flex;align-items:center;gap:18px}
+    .logo{width:96px;height:96px;border-radius:50%;overflow:hidden;border:6px solid var(--brand);flex:0 0 96px}
+    .logo img{width:100%;height:100%;object-fit:cover}
+    .hero-text{flex:1}
+    h1{margin:0;font-size:28px;color:var(--brand)}
+    p.lead{margin:6px 0 0;font-weight:600}
 
-    .hero{background:linear-gradient(180deg, rgba(183,136,255,0.03), rgba(110,231,208,0.02));border-radius:14px;padding:20px;display:flex;gap:22px;align-items:flex-start;box-shadow:0 12px 40px rgba(2,8,16,0.6)}
-    .left{flex:1}
-    .badge{display:inline-block;background:linear-gradient(90deg, rgba(110,231,208,0.06), rgba(179,136,255,0.04));color:var(--accent2);padding:8px 14px;border-radius:999px;font-weight:700;margin-bottom:10px;font-size:13px}
-    h1{font-size:clamp(20px,3vw,34px);margin:6px 0 8px 0;color:#E6FDF8;line-height:1.1}
-    h2{font-size:clamp(13px,1.6vw,16px);margin:0 0 12px 0;color:var(--muted)}
+    .top-cta{display:flex;gap:12px;margin-top:12px}
+    .btn{padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700;display:inline-flex;align-items:center;gap:8px}
+    .btn-primary{background:var(--brand);color:#fff}
+    .btn-ghost{background:transparent;border:2px solid var(--brand);color:var(--brand)}
 
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;padding:14px;margin-top:12px;border:1px solid rgba(255,255,255,0.02)}
+    /* Main grid */
+    .grid{display:grid;grid-template-columns:1fr 380px;gap:18px;margin-top:18px}
+    @media(max-width:900px){.grid{grid-template-columns:1fr;}.logo{display:none}.top-cta{flex-direction:column}}
 
-    .price{display:flex;align-items:baseline;gap:12px;margin:12px 0}
-    .price .now{font-size:22px;color:var(--accent1);font-weight:900}
-    .price .old{font-size:13px;color:rgba(255,255,255,0.18);text-decoration:line-through}
+    /* Left column content */
+    .card{background:#fff;border-radius:12px;padding:16px;box-shadow:0 6px 18px rgba(20,20,20,0.06)}
+    .features{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    @media(max-width:640px){.features{grid-template-columns:1fr}}
+    ul.bullets{margin:0;padding-left:18px}
 
-    .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
-    .btn{padding:12px 18px;border-radius:12px;border:0;font-weight:800;cursor:pointer;min-width:170px;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;color:#02121a}
-    .btn-whatsapp{background:linear-gradient(90deg,var(--accent1),#34d399);color:#02121a}
-    .btn-pay{background:linear-gradient(90deg,var(--accent2),var(--gold));color:#02121a}
-
-    .course-area{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:12px}
-    .course-card{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:14px;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:86px;border:1px solid rgba(255,255,255,0.02);box-shadow:0 10px 30px rgba(2,8,16,0.6);transition:transform .22s ease,box-shadow .22s ease}
-    .course-card:hover{transform:translateY(-6px);box-shadow:0 24px 60px rgba(16,30,40,0.7)}
-    .course-title{font-weight:800;color:#E6FDF8;text-align:center}
-    .course-sub{font-size:13px;color:var(--muted);margin-top:6px;text-align:center}
-
+    /* Video gallery 2x2 */
     .videos{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
-    .video-box{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);display:flex;align-items:center;gap:10px}
-    .video-thumb{width:88px;height:54px;background:linear-gradient(90deg,var(--accent2),var(--accent1));border-radius:6px;display:flex;align-items:center;justify-content:center;color:#02121a;font-weight:800}
+    @media(max-width:640px){.videos{grid-template-columns:1fr}}
+    .video-card{position:relative;border-radius:10px;overflow:hidden;background:#ddd;padding-bottom:56.25%}
+    .video-card iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    .video-thumb{position:relative;display:block;width:100%;height:100%;background-size:cover;background-position:center}
+    .video-thumb .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:rgba(255,255,255,0.9);padding:10px;border-radius:50%}
 
-    .mentor-card{display:flex;gap:12px;align-items:center;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);justify-content:center}
-    .mentor-img{width:220px;height:auto;border-radius:12px;object-fit:cover;border:4px solid rgba(255,255,255,0.04);box-shadow:0 18px 36px rgba(0,0,0,0.6)}
+    /* Testimonials */
+    .testimonials{margin-top:14px}
+    .test-single{padding:10px;border-radius:10px;background:linear-gradient(180deg,#fff,#fff);margin-bottom:10px;border-left:4px solid var(--accent)}
 
-    .footer{margin-top:18px;text-align:center;color:var(--muted);font-size:14px}
-    .footer-cta{display:flex;gap:10px;justify-content:center;margin-top:10px}
+    /* Right col - trainer, join box */
+    .trainer{display:flex;flex-direction:column;align-items:center;text-align:center}
+    .trainer img{width:120px;height:120px;object-fit:cover;border-radius:8px;border:6px solid var(--muted)}
+    .join-box{margin-top:14px;width:100%;text-align:center;background:linear-gradient(90deg,var(--accent),#ffd7a8);padding:12px;border-radius:12px}
+    .join-box a{display:inline-block;margin-top:10px}
 
-    @media(max-width:1100px){
-      .course-area{grid-template-columns:repeat(4,1fr)}
-      .videos{grid-template-columns:1fr}
-    }
-    @media(max-width:820px){
-      .hero{flex-direction:column;align-items:center;text-align:center}
-      .course-area{grid-template-columns:repeat(2,1fr)}
-      .mentor-img{width:100%}
-    }
-    @media(max-width:420px){
-      .course-area{grid-template-columns:1fr}
-      .btn{width:100%}
-    }
+    /* Floating sticky CTA */
+    .floating-cta{position:fixed;right:18px;bottom:18px;background:var(--cta);color:#fff;padding:12px 16px;border-radius:999px;box-shadow:0 6px 20px rgba(0,0,0,0.18);z-index:999;font-weight:700}
+
+    /* Hover effects */
+    .btn:hover,.card:hover{transform:translateY(-4px);transition:all .18s ease}
+    .video-card:hover{filter:contrast(1.02) saturate(1.04)}
+
+    footer{margin-top:22px;text-align:center;color:#555;font-size:13px}
+
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="hero">
-      <div class="left">
-        <div class="badge">Kasturi Divine • 90-Day Reiki Certification</div>
-        <h1>Certified Reiki Healer Banein — Shuru Kijiye Apna Healing Safar Aaj Se</h1>
-        <h2>Live Zoom classes • Weekly practice • Lifetime WhatsApp support • Certificate</h2>
+  <div class="wrap">
+    <header>
+      <div class="logo"><img src="/mnt/data/logo.png" alt="Kasturi Divine logo"></div>
+      <div class="hero-text">
+        <h1>Become a Certified Reiki Healer — Live + Recorded</h1>
+        <p class="lead">90-day practical course • Live Zoom classes • Lifetime WhatsApp support • Certificate</p>
+        <div class="top-cta">
+          <a class="btn btn-primary" href="#join">Join Now</a>
+          <a class="btn btn-ghost" href="https://chat.whatsapp.com/JyjgJl72hxcDaTGvMe0Ax1" target="_blank">Join Our WhatsApp Group</a>
+          <a class="btn" href="tel:+919354370946">Pay / Contact: 9354370946</a>
+        </div>
+      </div>
+    </header>
 
+    <main class="grid">
+      <div>
         <div class="card">
-          <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
+          <h3 style="color:var(--brand);margin-top:0">Course Content (highlights)</h3>
+          <div class="features">
             <div>
-              <div style="font-weight:900;color:#E6FDF8">Course Starts: 17 November</div>
-              <div style="color:var(--muted);font-size:13px;margin-top:6px">90 दिन • Weekend & Evening batches • EMI available</div>
+              <ul class="bullets">
+                <li>Self-healing & Distance Healing</li>
+                <li>7 Chakras Healing & Aura Cleansing</li>
+                <li>Water & Food Charging Techniques</li>
+                <li>Cord-cutting, Meditations & Affirmations</li>
+                <li>Money Reiki & Hypno-Heal for health, wealth</li>
+              </ul>
             </div>
-            <div class="price">
-              <div class="now">₹9,999</div>
-              <div class="old">₹19,999</div>
+            <div>
+              <ul class="bullets">
+                <li>Angels guide & Visualization techniques</li>
+                <li>21-days Gratitude Practice</li>
+                <li>Reiki Box & Practical Tools</li>
+                <li>Live Q&amp;A, PDFs & Recordings</li>
+              </ul>
             </div>
           </div>
 
-          <div style="margin-top:12px" class="cta-row">
-            <a class="btn btn-whatsapp" href="https://wa.me/919354370946" target="_blank">Join WhatsApp Group</a>
-            <a class="btn btn-pay" href="https://example.com/pay?upi=your-upi@bank" target="_blank">Pay & Enroll Now</a>
+          <h3 style="margin-top:14px">Watch short demo videos</h3>
+          <div class="videos">
+            <!-- Replace these if you prefer to lazy-load thumbnails and open youtube on click. Embedded for demo. -->
+            <div class="video-card card">
+              <iframe src="https://www.youtube.com/embed/1sUiSParfUI" loading="lazy" allowfullscreen></iframe>
+            </div>
+            <div class="video-card card">
+              <iframe src="https://www.youtube.com/embed/BXdoXGE-Dzk" loading="lazy" allowfullscreen></iframe>
+            </div>
+            <div class="video-card card">
+              <iframe src="https://www.youtube.com/embed/3J1BpOuK2wI" loading="lazy" allowfullscreen></iframe>
+            </div>
+            <div class="video-card card">
+              <iframe src="https://www.youtube.com/embed/uCTeptNXh9s" loading="lazy" allowfullscreen></iframe>
+            </div>
+          </div>
+
+          <div class="testimonials">
+            <h3>Testimonials</h3>
+            <div class="test-single">"Amazing practical techniques — I healed my chronic neck pain in 3 sessions." — <strong>Demo Student</strong></div>
+            <div class="test-single">"Supportive teachers and clear instructions. Recordings helped me revisit exercises." — <strong>Demo Student 2</strong></div>
           </div>
         </div>
 
-        <div class="card" style="margin-top:14px">
-  <h3 style="margin:0 0 8px 0;color:#E6FDF8;text-align:center">YouTube Resources (Demo)</h3>
-  <div style="color:var(--muted);margin-bottom:8px;text-align:center">Watch these short videos to understand Reiki healing and techniques.</div>
+        <footer>
+          <small>© Kasturi Divine — All rights reserved</small>
+        </footer>
+      </div>
 
-  <div class="videos">
-    <!-- Video 1 -->
-    <a class="video-box" href="https://www.youtube.com/watch?v=LeO9PAlws5c&t=2s" target="_blank" style="position:relative;overflow:hidden;">
-      <div class="video-thumb" style="position:relative;overflow:hidden;">
-        <img src="https://img.youtube.com/vi/LeO9PAlws5c/hqdefault.jpg" alt="Intro to Reiki" style="width:100%;height:100%;object-fit:cover;border-radius:6px;">
-        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
-          <div style="background:rgba(0,0,0,0.6);width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;color:white;">▶</div>
-        </div>
-      </div>
-      <div>
-        <div style="font-weight:800;color:#E6FDF8">Intro to Reiki</div>
-        <div style="font-size:13px;color:var(--muted)">10 min • Basics</div>
-      </div>
-    </a>
+      <aside>
+        <div class="card trainer">
+          <img src="/mnt/data/WhatsApp Image 2025-11-10 at 1.05.58 PM.jpeg" alt="Dr. Santoshh Jakhar and Mrs Neitu Choudhary">
+          <h4 style="margin:10px 0 0">Dr. Santoshh Jakhar</h4>
+          <p style="margin:4px 0 0">& Mrs. Neitu Choudhary</p>
 
-    <!-- Video 2 -->
-    <a class="video-box" href="https://www.youtube.com/watch?v=5IfwsEi9MI8&t=285s" target="_blank" style="position:relative;overflow:hidden;">
-      <div class="video-thumb" style="position:relative;overflow:hidden;">
-        <img src="https://img.youtube.com/vi/5IfwsEi9MI8/hqdefault.jpg" alt="Chakra Healing Demo" style="width:100%;height:100%;object-fit:cover;border-radius:6px;">
-        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
-          <div style="background:rgba(0,0,0,0.6);width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;color:white;">▶</div>
-        </div>
-      </div>
-      <div>
-        <div style="font-weight:800;color:#E6FDF8">Chakra Healing Demo</div>
-        <div style="font-size:13px;color:var(--muted)">12 min • Live demo</div>
-      </div>
-    </a>
+          <div class="join-box" id="join">
+            <strong style="display:block">Ready to join?</strong>
+            <p style="margin:6px 0 0">Live classes on Zoom • Weekly sessions • Full-time WhatsApp support</p>
+            <a class="btn btn-primary" href="https://chat.whatsapp.com/JyjgJl72hxcDaTGvMe0Ax1" target="_blank">Join WhatsApp Group</a>
+            <a class="btn" href="tel:+919354370946">Pay: 9354370946</a>
+          </div>
 
-    <!-- Video 3 -->
-    <a class="video-box" href="https://www.youtube.com/watch?v=d9-wF1-xlGo&t=95s" target="_blank" style="position:relative;overflow:hidden;">
-      <div class="video-thumb" style="position:relative;overflow:hidden;">
-        <img src="https://img.youtube.com/vi/d9-wF1-xlGo/hqdefault.jpg" alt="Distance Healing Technique" style="width:100%;height:100%;object-fit:cover;border-radius:6px;">
-        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
-          <div style="background:rgba(0,0,0,0.6);width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;color:white;">▶</div>
+          <div style="margin-top:12px;font-size:13px;color:#444">Have questions?<br><a href="tel:+919205681456">9205681456</a> &nbsp; | &nbsp; <a href="tel:+919736317525">9736317525</a></div>
         </div>
-      </div>
-      <div>
-        <div style="font-weight:800;color:#E6FDF8">Distance Healing Technique</div>
-        <div style="font-size:13px;color:var(--muted)">8 min • Remote method</div>
-      </div>
-    </a>
+      </aside>
+    </main>
 
-    <!-- Video 4 -->
-    <a class="video-box" href="https://www.youtube.com/watch?v=a_zJBWT3hIU&t=3074s" target="_blank" style="position:relative;overflow:hidden;">
-      <div class="video-thumb" style="position:relative;overflow:hidden;">
-        <img src="https://img.youtube.com/vi/a_zJBWT3hIU/hqdefault.jpg" alt="Money Reiki Practice" style="width:100%;height:100%;object-fit:cover;border-radius:6px;">
-        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
-          <div style="background:rgba(0,0,0,0.6);width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;color:white;">▶</div>
-        </div>
-      </div>
-      <div>
-        <div style="font-weight:800;color:#E6FDF8">Money Reiki Practice</div>
-        <div style="font-size:13px;color:var(--muted)">9 min • Abundance</div>
-      </div>
-    </a>
+    <!-- Floating CTA to highlight join message (animated subtle) -->
+    <a class="floating-cta" href="https://chat.whatsapp.com/JyjgJl72hxcDaTGvMe0Ax1" target="_blank">Join WhatsApp Group</a>
+
   </div>
-</div>
 
-              <div>
-                <div style="font-weight:800;color:#E6FDF8">Chakra Healing Demo</div>
-                <div style="font-size:13px;color:var(--muted)">12 min • Live demo</div>
-              </div>
-            </a>
-            <a class="video-box" href="https://www.youtube.com/watch?v=d9-wF1-xlGo&t=95s" target="_blank">
-              <div class="video-thumb">▶</div>
-              <div>
-                <div style="font-weight:800;color:#E6FDF8">Distance Healing Technique</div>
-                <div style="font-size:13px;color:var(--muted)">8 min • Remote method</div>
-              </div>
-            </a>
-            <a class="video-box" href="https://www.youtube.com/watch?v=a_zJBWT3hIU&t=3074s" target="_blank">
-              <div class="video-thumb">▶</div>
-              <div>
-                <div style="font-weight:800;color:#E6FDF8">Money Reiki Practice</div>
-                <div style="font-size:13px;color:var(--muted)">9 min • Abundance</div>
-              </div>
-            </a>
-          </div>
-        </div>
+  <script>
+    // small interactive touches
+    document.querySelectorAll('.btn').forEach(b=>{
+      b.addEventListener('mouseenter',()=>b.style.transform='translateY(-3px)')
+      b.addEventListener('mouseleave',()=>b.style.transform='translateY(0)')
+    })
 
-        <div style="margin-top:18px;display:flex;justify-content:center">
-          <div class="mentor-card">
-           <img alt="Mentors" class="mentor-img" src="KDABOUT.jpg">
-
-          </div>
-        </div>
-
-        <div class="card" style="margin-top:16px;text-align:center">
-          <div class="you-get">YOU'LL GET:<br>Live classes on Zoom, recordings, PDFs, weekly practice, full-time WhatsApp support, certificate, Q&A sessions</div>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="footer">
-      <div style="font-weight:800;color:#E6FDF8">Kasturi Divine • For more info call/WhatsApp: +91 9205681456 / 9736317525 • © Kasturi Divine</div>
-      <div class="footer-cta">
-        <a class="btn btn-whatsapp" href="https://wa.me/919354370946" target="_blank">Join WhatsApp Group</a>
-        <a class="btn btn-pay" href="https://example.com/pay?upi=your-upi@bank" target="_blank">Pay & Enroll Now</a>
-      </div>
-    </div>
-  </div>
+    // make video iframes clickable on mobile open in new tab (improve UX)
+    document.querySelectorAll('.video-card iframe').forEach(iframe=>{
+      iframe.addEventListener('click',()=>{
+        // no-op: embedded iframe already clickable. Kept for future customization.
+      })
+    })
+  </script>
 </body>
 </html>
-
-
