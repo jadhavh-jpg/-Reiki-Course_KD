@@ -131,22 +131,48 @@
             </div>
           </div>
 
-          <h3 style="margin-top:14px">Watch short demo videos</h3>
-          <div class="videos">
-            <div class="video-card card">
-<iframe 
-  src="https://www.youtube.com/embed/1sUiSParfUI?autoplay=1&mute=1&loop=0&modestbranding=1&rel=0&playsinline=1"
-  width="560" height="315"
-  style="border-radius:10px;width:100%;aspect-ratio:16/9;"
-  allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
-  allowfullscreen>
-</iframe>
+         <h3 style="margin-top:14px">Watch short demo videos</h3>
+<div class="videos">
+  <!-- 1st video: autoplay muted (landscape 16:9) -->
+  <div class="video-card card">
+    <iframe 
+      src="https://www.youtube.com/embed/1sUiSParfUI?autoplay=1&mute=1&modestbranding=1&rel=0&playsinline=1"
+      allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+      allowfullscreen
+      loading="eager">
+    </iframe>
+  </div>
 
+  <!-- 2nd video: normal (no autoplay) -->
+  <div class="video-card card">
+    <iframe 
+      src="https://www.youtube.com/embed/BXdoXGE-Dzk?modestbranding=1&rel=0&playsinline=1"
+      loading="lazy"
+      allow="encrypted-media; fullscreen; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
 
-            <div class="video-card card"><iframe src="https://www.youtube.com/embed/BXdoXGE-Dzk" loading="lazy" allowfullscreen></iframe></div>
-            <div class="video-card card"><iframe src="https://www.youtube.com/embed/3J1BpOuK2wI" loading="lazy" allowfullscreen></iframe></div>
-            <div class="video-card card"><iframe src="https://www.youtube.com/embed/uCTeptNXh9s" loading="lazy" allowfullscreen></iframe></div>
-          </div>
+  <!-- 3rd video: normal (no autoplay) -->
+  <div class="video-card card">
+    <iframe 
+      src="https://www.youtube.com/embed/3J1BpOuK2wI?modestbranding=1&rel=0&playsinline=1"
+      loading="lazy"
+      allow="encrypted-media; fullscreen; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <!-- 4th video: normal (no autoplay) -->
+  <div class="video-card card">
+    <iframe 
+      src="https://www.youtube.com/embed/uCTeptNXh9s?modestbranding=1&rel=0&playsinline=1"
+      loading="lazy"
+      allow="encrypted-media; fullscreen; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+</div>
 
           <div class="testimonials">
             <h3>Testimonials</h3>
@@ -237,6 +263,7 @@
   <a class="floating-cta" href="https://chat.whatsapp.com/JyjgJl72hxcDaTGvMe0Ax1" target="_blank">Join WhatsApp Group</a>
 </body>
 </html>
+
 
 
 
