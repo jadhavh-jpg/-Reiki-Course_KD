@@ -6,7 +6,7 @@
   <title>Kasturi Divine — Reiki Course</title>
   <style>
     :root{
-      --brand:#6b3f1f; /* brown */
+      --brand:#6b3f1f;
       --accent:#f5b040;
       --muted:#f7f3ef;
       --cta:#ff6b35;
@@ -25,55 +25,54 @@
     h1{margin:0;font-size:28px;color:var(--brand)}
     p.lead{margin:6px 0 0;font-weight:600}
 
-    .top-cta{display:flex;gap:12px;margin-top:12px}
-    .btn{padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700;display:inline-flex;align-items:center;gap:8px}
+    .top-cta{display:flex;gap:12px;margin-top:12px;flex-wrap:wrap}
+    .btn{padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700;display:inline-flex;align-items:center;gap:8px;justify-content:center}
     .btn-primary{background:var(--brand);color:#fff}
     .btn-ghost{background:transparent;border:2px solid var(--brand);color:var(--brand)}
+    .btn:active{transform:translateY(1px)}
 
     /* Main grid */
-    .grid{display:grid;grid-template-columns:1fr 380px;gap:18px;margin-top:18px}
+    .grid{display:grid;grid-template-columns:1fr 400px;gap:18px;margin-top:18px;align-items:start}
     @media(max-width:900px){.grid{grid-template-columns:1fr;}.logo{display:none}.top-cta{flex-direction:column}}
 
-    /* Left column content */
     .card{background:#fff;border-radius:12px;padding:16px;box-shadow:0 6px 18px rgba(20,20,20,0.06)}
     .features{display:grid;grid-template-columns:1fr 1fr;gap:12px}
     @media(max-width:640px){.features{grid-template-columns:1fr}}
     ul.bullets{margin:0;padding-left:18px}
 
-    /* Video gallery 2x2 */
     .videos{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
     @media(max-width:640px){.videos{grid-template-columns:1fr}}
-    .video-card{position:relative;border-radius:10px;overflow:hidden;background:#ddd;padding-bottom:56.25%}
+    .video-card{position:relative;border-radius:10px;overflow:hidden;background:#000;padding-bottom:56.25%}
     .video-card iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-    .video-thumb{position:relative;display:block;width:100%;height:100%;background-size:cover;background-position:center}
-    .video-thumb .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:rgba(255,255,255,0.9);padding:10px;border-radius:50%}
 
-    /* Testimonials */
     .testimonials{margin-top:14px}
-    .test-single{padding:10px;border-radius:10px;background:linear-gradient(180deg,#fff,#fff);margin-bottom:10px;border-left:4px solid var(--accent)}
+    .test-single{padding:10px;border-radius:10px;background:#fff;margin-bottom:10px;border-left:4px solid var(--accent)}
 
-    /* Right col - trainer, join box */
-    .trainer{display:flex;flex-direction:column;align-items:center;text-align:center}
-    .trainer img{width:120px;height:120px;object-fit:cover;border-radius:8px;border:6px solid var(--muted)}
-    .join-box{margin-top:14px;width:100%;text-align:center;background:linear-gradient(90deg,var(--accent),#ffd7a8);padding:12px;border-radius:12px}
+    /* Trainer section (moved full width) */
+    .trainer-section {display:flex;justify-content:center;margin-top:30px;margin-bottom:30px;padding:0 12px}
+    .trainer-section .card {max-width:540px;width:100%;text-align:center;padding:20px;border-radius:14px}
+    .trainer{display:flex;flex-direction:column;align-items:center;text-align:center;justify-content:flex-start}
+    .trainer img{width:95%;max-width:360px;height:auto;object-fit:cover;border-radius:14px;border:6px solid var(--muted);margin-bottom:14px;box-shadow:0 8px 20px rgba(0,0,0,0.08)}
+    @media(max-width:480px){.trainer img{max-width:300px}}
+
+    .join-box{margin-top:14px;width:100%;text-align:center;background:linear-gradient(90deg,var(--accent),#ffd7a8);padding:16px;border-radius:14px}
     .join-box a{display:inline-block;margin-top:10px}
 
-    /* Floating sticky CTA */
     .floating-cta{position:fixed;right:18px;bottom:18px;background:var(--cta);color:#fff;padding:12px 16px;border-radius:999px;box-shadow:0 6px 20px rgba(0,0,0,0.18);z-index:999;font-weight:700}
 
-    /* Hover effects */
     .btn:hover,.card:hover{transform:translateY(-4px);transition:all .18s ease}
     .video-card:hover{filter:contrast(1.02) saturate(1.04)}
 
     footer{margin-top:22px;text-align:center;color:#555;font-size:13px}
 
+    /* Small helper for phone links */
+    .phones a{color:var(--brand);text-decoration:none;font-weight:700}
   </style>
 </head>
 <body>
   <div class="wrap">
     <header>
       <div class="logo"><img src="logo.png" alt="Kasturi Divine Logo"></div>
-
       <div class="hero-text">
         <h1>Become a Certified Reiki Healer — Live + Recorded</h1>
         <p class="lead">90-day practical course • Live Zoom classes • Lifetime WhatsApp support • Certificate</p>
@@ -111,19 +110,10 @@
 
           <h3 style="margin-top:14px">Watch short demo videos</h3>
           <div class="videos">
-            <!-- Replace these if you prefer to lazy-load thumbnails and open youtube on click. Embedded for demo. -->
-            <div class="video-card card">
-              <iframe src="https://www.youtube.com/embed/1sUiSParfUI" loading="lazy" allowfullscreen></iframe>
-            </div>
-            <div class="video-card card">
-              <iframe src="https://www.youtube.com/embed/BXdoXGE-Dzk" loading="lazy" allowfullscreen></iframe>
-            </div>
-            <div class="video-card card">
-              <iframe src="https://www.youtube.com/embed/3J1BpOuK2wI" loading="lazy" allowfullscreen></iframe>
-            </div>
-            <div class="video-card card">
-              <iframe src="https://www.youtube.com/embed/uCTeptNXh9s" loading="lazy" allowfullscreen></iframe>
-            </div>
+            <div class="video-card card"><iframe src="https://www.youtube.com/embed/1sUiSParfUI" loading="lazy" allowfullscreen></iframe></div>
+            <div class="video-card card"><iframe src="https://www.youtube.com/embed/BXdoXGE-Dzk" loading="lazy" allowfullscreen></iframe></div>
+            <div class="video-card card"><iframe src="https://www.youtube.com/embed/3J1BpOuK2wI" loading="lazy" allowfullscreen></iframe></div>
+            <div class="video-card card"><iframe src="https://www.youtube.com/embed/uCTeptNXh9s" loading="lazy" allowfullscreen></iframe></div>
           </div>
 
           <div class="testimonials">
@@ -132,53 +122,57 @@
             <div class="test-single">"Supportive teachers and clear instructions. Recordings helped me revisit exercises." — <strong>Demo Student 2</strong></div>
           </div>
         </div>
-
-        <footer>
-          <small>© Kasturi Divine — All rights reserved</small>
-        </footer>
       </div>
 
+      <!-- Right column reserved for quick contact & short info (kept slim on desktop) -->
       <aside>
-        <div class="card trainer">
-          <img src="KDABOUT.jpg" alt="Dr. Santoshh Jakhar and Mrs. Neitu Choudhary">
-
-          <h4 style="margin:10px 0 0">Dr. Santoshh Jakhar</h4>
-          <p style="margin:4px 0 0">& Mrs. Neitu Choudhary</h4>
-
-          <div class="join-box" id="join">
-            <strong style="display:block">Ready to join?</strong>
-            <p style="margin:6px 0 0">Live classes on Zoom • Weekly sessions • Full-time WhatsApp support</p>
-            <a class="btn btn-primary" href="https://chat.whatsapp.com/JyjgJl72hxcDaTGvMe0Ax1" target="_blank">Join WhatsApp Group</a>
-            <a class="btn" href="tel:+919354370946">Pay: 9354370946</a>
+        <div class="card" style="padding:14px;display:flex;flex-direction:column;gap:12px;align-items:center">
+          <div style="width:120px;height:120px;border-radius:8px;overflow:hidden">
+            <img src="logo.png" alt="Kasturi Divine Logo" style="width:100%;height:100%;object-fit:cover">
           </div>
-
-          <div style="margin-top:12px;font-size:13px;color:#444">Have questions?<br><a href="tel:+919205681456">9205681456</a> &nbsp; | &nbsp; <a href="tel:+919736317525">9736317525</a></div>
+          <div style="text-align:center">
+            <h4 style="margin:4px 0 2px;color:var(--brand)">Kasturi Divine</h4>
+            <div style="font-size:13px;color:#444">Reiki • Healing • Guidance</div>
+          </div>
+          <div style="width:100%;text-align:center">
+            <a class="btn btn-primary" href="#join">Join WhatsApp Group</a>
+          </div>
+          <div style="margin-top:6px;font-size:13px;color:#444" class="phones">
+            <div>Pay / Contact: <a href="tel:+919354370946">9354370946</a></div>
+            <div>Support: <a href="tel:+919205681456">9205681456</a> &nbsp;|&nbsp; <a href="tel:+919736317525">9736317525</a></div>
+          </div>
         </div>
       </aside>
     </main>
 
-    <!-- Floating CTA to highlight join message (animated subtle) -->
-    <a class="floating-cta" href="https://chat.whatsapp.com/JyjgJl72hxcDaTGvMe0Ax1" target="_blank">Join WhatsApp Group</a>
+    <!-- MOVED: trainer / join area as full-width section above footer -->
+    <section class="trainer-section" aria-label="Trainers and Join">
+      <div class="card trainer">
+        <img src="KDABOUT.jpg" alt="Dr. Santoshh Jakhar and Mrs. Neitu Choudhary">
+        <h4 style="margin:10px 0 0">Dr. Santoshh Jakhar</h4>
+        <p style="margin:4px 0 0">&amp; Mrs. Neitu Choudhary</p>
 
+        <div class="join-box" id="join">
+          <strong style="display:block">Ready to join?</strong>
+          <p style="margin:6px 0 0">Live classes on Zoom • Weekly sessions • Full-time WhatsApp support</p>
+          <a class="btn btn-primary" href="https://chat.whatsapp.com/JyjgJl72hxcDaTGvMe0Ax1" target="_blank">Join WhatsApp Group</a>
+          <a class="btn" href="tel:+919354370946">Pay: 9354370946</a>
+        </div>
+
+        <div style="margin-top:12px;font-size:13px;color:#444">
+          Have questions?<br>
+          <a href="tel:+919205681456">9205681456</a> &nbsp; | &nbsp;
+          <a href="tel:+919736317525">9736317525</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <small>© Kasturi Divine — All rights reserved</small>
+    </footer>
   </div>
 
-  <script>
-    // small interactive touches
-    document.querySelectorAll('.btn').forEach(b=>{
-      b.addEventListener('mouseenter',()=>b.style.transform='translateY(-3px)')
-      b.addEventListener('mouseleave',()=>b.style.transform='translateY(0)')
-    })
-
-    // make video iframes clickable on mobile open in new tab (improve UX)
-    document.querySelectorAll('.video-card iframe').forEach(iframe=>{
-      iframe.addEventListener('click',()=>{
-        // no-op: embedded iframe already clickable. Kept for future customization.
-      })
-    })
-  </script>
+  <!-- Floating CTA -->
+  <a class="floating-cta" href="https://chat.whatsapp.com/JyjgJl72hxcDaTGvMe0Ax1" target="_blank">Join WhatsApp Group</a>
 </body>
 </html>
-
-
-
-
